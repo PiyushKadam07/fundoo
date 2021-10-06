@@ -1,0 +1,52 @@
+.textbox {
+    .textbox-container {
+        margin-top: 0.4rem;
+        position: relative;
+        input {
+            outline: none;
+            padding: 0.5rem;
+            width: 100%;
+            border: solid 2px var(--theme);
+            border-radius: 4px;
+            cursor: text;
+    
+            &:not(:focus) {
+                border: solid 1px #dadce0;
+            }
+            transition: border 0.1s linear;
+        }
+    
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0 0.5rem;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            cursor: text;
+            color: #5f6368;
+        
+            transition: all 0.1s linear;
+        }
+    
+        input:focus ~ label {
+            font-size: 0.8rem;
+            display: inline;
+            height: auto;
+            top: -0.4rem;
+            background-color: #fff;
+            left: 0.5rem;
+            color: var(--theme);
+        }
+
+        input:not(focus):not(:placeholder-shown) ~ label {
+            font-size: 0.8rem;
+            display: inline;
+            height: auto;
+            top: -0.4rem;
+            background-color: #fff;
+            left: 0.5rem;
+        }
+    }
+}
