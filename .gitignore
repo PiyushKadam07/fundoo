@@ -1,7 +1,12 @@
 .DS_Store
 node_modules
 /dist
-
+Todo.vue
+Addtodo.vue
+Todos.js
+Todos.scss
+Todos.vue
+todos.js
 
 # local env files
 .env.local

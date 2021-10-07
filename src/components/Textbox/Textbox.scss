@@ -1,0 +1,78 @@
+.textbox {
+    width: 90%;
+    
+    .textbox-container {
+        margin-top: 0.4rem;
+        position: relative;
+
+        input {
+            outline: none;
+            padding: 0.5rem;
+            width: 100%;
+            border: solid 2px #277be9;
+            border-radius: 4px;
+            cursor: text;
+            height: 25px;
+            margin-bottom: 4%;
+    
+            &:not(:focus) {
+                border: solid 1px #dadce0;
+            }
+
+            transition: border 0.1s linear;
+
+            &.error {
+                border-color: #f00;
+            }
+        }
+    
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0 0.5rem;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            cursor: text;
+            color: #5f6368;
+            transition: all 0.1s linear;
+
+            &.error {
+                border-color: #f00;
+            }
+        }
+    
+        input:focus ~ label {
+            font-size: 0.8rem;
+            display: inline;
+            height: auto;
+            top: -0.4rem;
+            background-color: #fff;
+            left: 0.5rem;
+            color: #277be9;
+
+            &.error {
+                border-color: #f00;
+            }
+        }
+
+        input:not(focus):not(:placeholder-shown) ~ label {
+            font-size: 0.8rem;
+            display: inline;
+            height: auto;
+            top: -0.4rem;
+            background-color: #fff;
+            left: 0.5rem;
+
+            &.error {
+                border-color: #f00;
+            }
+        }
+    }
+
+    .small-error {
+        font-size: 0.8rem;
+        color: #f00;
+      }
+}

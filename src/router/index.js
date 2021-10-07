@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import SignUp from '../views/SignUp/SignUp.vue'
 
 const routes = [
   {
@@ -8,13 +9,35 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/signup',
+    name: 'SignUp',
+    component: SignUp,
+  },
+  {
+    path: '/signin',
+    name: 'SignIn',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    component: () => import(/* webpackChunkName: "about" */ '../views/SignIn/SignIn.vue')
+  },
+  {
+    path: '/forget_email',
+    name: 'Forgetemail',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Forgetemail/Forgetemail.vue')
+  },
+  {
+    path: '/reset_password',
+    name: 'Resetpassword',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Resetpassword/Resetpassword.vue')
+  },
+  
 ]
 
 const router = createRouter({

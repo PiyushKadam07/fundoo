@@ -1,0 +1,80 @@
+.signup {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .signup-container {
+        border: solid 1px #dadce0;
+        border-radius: 8px;
+        padding: 2.5rem 2rem;
+        display: flex;
+        gap: 1rem;
+        width: 50%;
+
+        @media screen and (max-width: 480px) {
+            border: none;
+        }
+
+        @media screen and (min-width: 481 px) and (max-width: 1024px) {
+            width: min(450px, 90vw);
+        }
+
+        .leftcolumn {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 1.5rem;
+            row-gap: 1.5rem;
+            flex: 6;
+
+            .title {
+                font-weight: 500;
+                font-size: 1.5rem;
+                grid-column: span 2;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 1.7rem;
+                }
+            }
+
+            a {
+                color: #277be9;
+                padding: 0.2rem 0.4rem;
+                font-weight: 600;
+                text-decoration: none;
+        
+                &:hover {
+                    color: #174ea6;
+                    background-color: #f6fafe;
+                    border-radius: 4px;
+                }
+            }
+
+            svg, .email-container, .email-next, .footer, .password {
+                grid-column: span 2;
+            }
+      
+            .password {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+            }
+        }
+
+        .rightcolumn {
+            flex: 4;
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
+      
+            .imgdesc {
+                padding: 0 2rem;
+                text-align: center;
+                font-weight: 300;
+                font-size: 16px;
+                color: #202124;
+            }
+        }
+    }
+}
+

@@ -1,4 +1,5 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import todo from './modules/todo.js';
 
 export default createStore({
   state: {
@@ -8,5 +9,6 @@ export default createStore({
   actions: {
   },
   modules: {
+    todo
   }
 })
