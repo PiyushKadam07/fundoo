@@ -22,14 +22,9 @@
             padding: 0;
         }
 
-        @media screen and (min-width: 481 px) and (max-width: 1024px) {
-            width: min(450px, 90vw);
-        }
-
         .email-container {
-            margin: 4% 2%;
-            padding: 3% 0;
-            width: 85%;
+            margin: 3% 2%;
+            width: 90%;
         }
 
         a {

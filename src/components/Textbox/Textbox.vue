@@ -1,15 +1,5 @@
 <template>
     <div class="textbox">
-         <!-- <div v-if="error" class="textbox-container">
-            <input :type="type" :id="name" :name="name" :placeholder="placeholder" :v-model="name" />
-            <input :type="type" :id="name" :name="name" :placeholder="placeholder">
-            <label :for="name" v-if="label" v-html="label"></label>
-        </div>
-        <div v-else class="textbox-container">
-            <input :type="type" :id="name" :name="name" :placeholder="placeholder" :v-model="name" />
-            <input :type="type" :id="name" :name="name" :placeholder="placeholder">
-            <label :for="name" v-if="label" v-html="label"></label>
-        </div> -->
         <div class="textbox-container">
             <input :type="type" :id="name" :name="name" :placeholder="placeholder" :v-model="name" />
             <label :for="name" v-if="label" v-html="label" :class="[error ? 'error' : '']"></label>

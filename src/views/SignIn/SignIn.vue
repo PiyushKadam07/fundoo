@@ -1,7 +1,7 @@
 <template>
     <div class="signin">
         <div class="signin-container">
-            <Logocontent text="Sign In" subtext="Use your Fundoo Account"/>
+            <Logocontent text="Sign In" subtext="Use your Fundoo Account" />
 
             <div class="email-container">
                 <Textbox type="text" name="email" label="Email or phone" />

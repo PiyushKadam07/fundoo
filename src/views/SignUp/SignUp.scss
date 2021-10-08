@@ -4,6 +4,10 @@
     justify-content: center;
     align-items: center;
 
+    @media screen and (max-width: 480px) {
+        width: 100%;
+    }
+
     .signup-container {
         border: solid 1px #dadce0;
         border-radius: 8px;
@@ -11,13 +15,12 @@
         display: flex;
         gap: 1rem;
         width: 50%;
+        margin: 0 auto;
 
         @media screen and (max-width: 480px) {
             border: none;
-        }
-
-        @media screen and (min-width: 481 px) and (max-width: 1024px) {
-            width: min(450px, 90vw);
+            width: 100%;
+            padding: 1.5rem 1rem;
         }
 
         .leftcolumn {
@@ -27,13 +30,19 @@
             row-gap: 1.5rem;
             flex: 6;
 
-            .title {
-                font-weight: 500;
-                font-size: 1.5rem;
-                grid-column: span 2;
+            .logocontainer {
+                width: 130%;
 
-                @media screen and (max-width: 500px) {
-                    font-size: 1.7rem;
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+
+                .logo-content {
+                    margin: 0;
+                    display: flex;
+                    justify-content: left;
+                    align-items: flex-start;
+                    margin-left: 2%;
                 }
             }
 
@@ -50,7 +59,7 @@
                 }
             }
 
-            svg, .email-container, .email-next, .footer, .password {
+            svg, .email-container, .logocontainer, .email-next, .footer, .password {
                 grid-column: span 2;
             }
       
@@ -58,6 +67,11 @@
                 display: flex;
                 align-items: center;
                 gap: 2rem;
+            }
+
+            @media screen and (max-width: 768px) {
+                grid-template-columns: auto;   
+                display: block;         
             }
         }
 

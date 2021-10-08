@@ -2,10 +2,9 @@
     <div class="signup">
         <div class="signup-container">
             <div class="leftcolumn">
-                <div class="logo">
-                    <Logo />
+                <div class="logocontainer">
+                    <Logocontent text="Create your Fundoo Account" />
                 </div>
-                <h1 class="title"> Create your Fundoo Account </h1>
 
                 <Textbox type="text" name="firstname" label="First Name"/>
                 <Textbox type="text" name="lastname" label="Last Name"/>

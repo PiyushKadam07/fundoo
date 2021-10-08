@@ -1,9 +1,15 @@
 .textbox {
-    width: 90%;
-    
+    width: 100%;
+
     .textbox-container {
         margin-top: 0.4rem;
         position: relative;
+        margin-bottom: 0;
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 20px;
+            width: 90%;
+        }
 
         input {
             outline: none;
@@ -13,17 +19,16 @@
             border-radius: 4px;
             cursor: text;
             height: 25px;
-            margin-bottom: 4%;
-    
+
             &:not(:focus) {
                 border: solid 1px #dadce0;
             }
 
-            transition: border 0.1s linear;
-
             &.error {
                 border-color: #f00;
             }
+
+            transition: border 0.1s linear;
         }
     
         label {
@@ -36,6 +41,7 @@
             height: 100%;
             cursor: text;
             color: #5f6368;
+
             transition: all 0.1s linear;
 
             &.error {
@@ -47,7 +53,7 @@
             font-size: 0.8rem;
             display: inline;
             height: auto;
-            top: -0.4rem;
+            top: 1rem;
             background-color: #fff;
             left: 0.5rem;
             color: #277be9;
@@ -57,7 +63,7 @@
             }
         }
 
-        input:not(focus):not(:placeholder-shown) ~ label {
+        input:focus:not(:placeholder-shown) ~ label {
             font-size: 0.8rem;
             display: inline;
             height: auto;
@@ -74,5 +80,5 @@
     .small-error {
         font-size: 0.8rem;
         color: #f00;
-      }
+    }
 }
