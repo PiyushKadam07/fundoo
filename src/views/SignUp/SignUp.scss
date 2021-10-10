@@ -1,5 +1,5 @@
 .signup {
-    height: 100vh;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@
         padding: 2.5rem 2rem;
         display: flex;
         gap: 1rem;
-        width: 50%;
+        width: 600px;
         margin: 0 auto;
 
         @media screen and (max-width: 480px) {

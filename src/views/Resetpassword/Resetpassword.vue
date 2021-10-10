@@ -1,14 +1,14 @@
 <template>
     <div class="resetpassword">
-        <div class="resetpassword-container">
+        <form @submit.prevent="submit" class="resetpassword-container">
             <Logocontent text="Reset Password" />
 
-            <Textbox name="password" label="Password" type="password" />
+            <Textbox name="password" label="Password" type="password" :error_message="v$.password.password.$error ? v$.password.password.$errors[0].$message : ''" v-model:data.sync="password.password" />
 
-            <Textbox name="confirm" label="Confirm" type="password" />
+            <Textbox name="confirm" label="Confirm" type="password" :error_message="v$.password.confirm.$error ? v$.password.confirm.$errors[0].$message : ''" v-model:data.sync="password.confirm" />
 
             <Footer text="" />
-        </div>
+        </form>
     </div>
 </template>
     

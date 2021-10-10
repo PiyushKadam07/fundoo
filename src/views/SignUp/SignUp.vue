@@ -1,30 +1,32 @@
 <template>
     <div class="signup">
         <div class="signup-container">
-            <div class="leftcolumn">
+            <form @submit.prevent="submit" class="leftcolumn">
                 <div class="logocontainer">
                     <Logocontent text="Create your Fundoo Account" />
                 </div>
 
-                <Textbox type="text" name="firstname" label="First Name"/>
-                <Textbox type="text" name="lastname" label="Last Name"/>
+                <Textbox type="text" name="firstname" label="First Name" :error_message="v$.firstname.$error ? v$.firstname.$errors[0].$message : ''" v-model:data.sync="firstname" />
+
+                <Textbox type="text" name="lastname" label="Last Name" :error_message="v$.lastname.$error ? v$.lastname.$errors[0].$message : ''" v-model:data.sync="lastname" />
 
                 <div class="email-container">
-                    <Textbox type="text" name="email" label="Username"/>
+                    <Textbox type="text" name="email" label="Username" :error_message="v$.email.$error ? v$.email.$errors[0].$message : ''" v-model:data.sync="email" />
                 </div>
 
                 <div class="email-next">
                     <a href="#">Use my current email address instead</a>
                 </div>
 
-                <Textbox name="password" label="Password" type="password" />
-                <Textbox name="confirm" label="Confirm" type="password" />
+                <Textbox name="password" label="Password" :type="showPassword ? 'text' : 'password'" :error_message="v$.password.password.$error ? v$.password.password.$errors[0].$message : ''" v-model:data.sync="password.password" />
+                <Textbox name="confirm" label="Confirm" :type="showPassword ? 'text' : 'password'" :error_message="v$.password.confirm.$error ? v$.password.confirm.$errors[0].$message : ''" v-model:data.sync="password.confirm" />
+                
                 <div class="password">
-                    <input type="checkbox" name="check" id="check" class="check" />
+                    <input type="checkbox" v-model="showPassword" name="check" id="check" class="check" />
                     <label for="check">Show password</label>
                 </div>
-                <Footer text="Sign in instead" />
-            </div>
+                <Footer text="Sign in instead" url="http://localhost:8080/signin" />
+            </form>
             <div class="rightcolumn">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

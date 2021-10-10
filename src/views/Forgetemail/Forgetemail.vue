@@ -1,12 +1,12 @@
 <template>
     <div class="forgetemail">
-        <div class="forgetemail-container">
+        <form @submit.prevent="submit" class="forgetemail-container">
             <Logocontent text="Find your email" subtext="Enter your recovery email or phone number" />
 
-            <Textbox type="text" name="email" label="Email or phone" />
+            <Textbox type="text" name="email" label="Email or phone" :error_message="v$.email.$error ? v$.email.$errors[0].$message : ''" v-model:data.sync="email" />
 
             <Footer text="" />
-        </div>
+        </form>
     </div>
 </template>
     

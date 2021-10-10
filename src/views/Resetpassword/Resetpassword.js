@@ -2,6 +2,8 @@ import "./Resetpassword.scss";
 import Logocontent from '@/components/Logocontent/Logocontent.vue';
 import Textbox from '@/components/Textbox/Textbox.vue';
 import Footer from '@/components/Footer/Footer.vue';
+import useValidate from '@vuelidate/core';
+import { required, helpers, sameAs } from '@vuelidate/validators';
 
 export default {
     name: 'Resetpassword',
@@ -9,5 +11,33 @@ export default {
         Logocontent,
         Textbox,
         Footer,
-    }
+    },
+    data() {
+        return {
+            v$: useValidate(),
+            password: {
+                password: '',
+                confirm: '',
+            },
+        }
+    },
+    validations() {
+        return {
+            password: {
+                password: { 
+                    required: helpers.withMessage("Password cannot be empty", required), 
+                },
+                confirm: { 
+                    required: helpers.withMessage("Confirm Password cannot be empty", required),
+                    sameAs: helpers.withMessage("Passwords do not match", sameAs(this.password.password)),
+                },
+            },
+        }
+    },
+    methods: {
+        submit() {
+            this.v$.$validate();
+            console.log(this.v$);
+        }
+    },
 }

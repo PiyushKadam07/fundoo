@@ -25,7 +25,7 @@
             }
 
             &.error {
-                border-color: #f00;
+                border: solid 1px #f00;
             }
 
             transition: border 0.1s linear;
@@ -45,7 +45,7 @@
             transition: all 0.1s linear;
 
             &.error {
-                border-color: #f00;
+                color: #f00;
             }
         }
     
@@ -59,11 +59,12 @@
             color: #277be9;
 
             &.error {
-                border-color: #f00;
+                color: #f00;
             }
         }
 
-        input:focus:not(:placeholder-shown) ~ label {
+        input:not(:placeholder-shown) ~ label,
+        input:focus ~ label {
             font-size: 0.8rem;
             display: inline;
             height: auto;

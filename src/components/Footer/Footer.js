@@ -4,5 +4,8 @@ export default {
         text: {
             type: String,
         },
+        url: {
+            type: String,
+        }
     },
 }

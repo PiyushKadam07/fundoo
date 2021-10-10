@@ -1,12 +1,11 @@
 <template>
     <div class="footer">
         <div class="text-content">
-            <!-- <router-link :to="{ name: 'Signin' }" class="content"> {{ text }} </router-link> -->
-            <a href="#" class="content"> {{ text }} </a>
+            <a :href="url" class="content"> {{ text }} </a>
         </div>
 
         <div class="nextbtn">
-            <button class="next" @click="submit">Next</button>
+            <button class="next" type="submit" @click="submit">Next</button>
         </div>
     </div>
 </template>
