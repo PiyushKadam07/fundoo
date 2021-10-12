@@ -10,7 +10,7 @@
             <div class="email-container">
                 <Textbox name="password" label="Password" type="password" :error_message="v$.password.$error ? v$.password.$errors[0].$message : ''" v-model:data.sync="password"/>
             </div>
-            <a href="http://localhost:8080/forget_email"> Forget email? </a>
+            <a @click="forget_email()"> Forget email? </a>
 
             <div class="above-footer"> Not your computer? Use Guest mode to sign in privately.
                 <a href="#">Learn more</a> 

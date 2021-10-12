@@ -22,7 +22,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/SignIn/SignIn.vue')
   },
   {
-    path: '/forget_email',
+    path: '/forget_email/:id',
     name: 'Forgetemail',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -30,7 +30,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Forgetemail/Forgetemail.vue')
   },
   {
-    path: '/reset_password',
+    path: '/reset_password/:id',
     name: 'Resetpassword',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

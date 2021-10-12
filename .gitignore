@@ -7,6 +7,12 @@ Todos.js
 Todos.scss
 Todos.vue
 todos.js
+Header.vue
+Header.js
+Header.scss
+Keep.vue
+Keep.js
+Keep.scss
 
 # local env files
 .env.local

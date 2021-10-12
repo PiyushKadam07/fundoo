@@ -1,5 +1,10 @@
 .textbox {
     width: 100%;
+    height: 60px;
+
+    @media screen and (max-width: 480px) {
+        height: 80px;
+    }
 
     .textbox-container {
         margin-top: 0.4rem;
@@ -7,7 +12,6 @@
         margin-bottom: 0;
 
         @media screen and (max-width: 768px) {
-            margin-bottom: 20px;
             width: 90%;
         }
 

@@ -4,6 +4,7 @@ import Logocontent from '@/components/Logocontent/Logocontent.vue';
 import Footer from '@/components/Footer/Footer.vue';
 import useValidate from '@vuelidate/core';
 import { required, alpha, sameAs, helpers, email } from '@vuelidate/validators';
+import axios from "axios";
 
 export default {
     name: 'SignUp',
@@ -50,15 +51,31 @@ export default {
             },
         }
     },
-    // watch: {
-    //     firstname(newval, oldval) {
-    //         console.log(newval, oldval)
-    //     }
-    // },
     methods: {
         submit() {
             this.v$.$validate();
-            console.log(this.v$);
+            // console.log(this.v$);
+            if (!this.v$.error) {
+                let data = {
+                    firstName: this.firstname,
+                    lastName: this.lastname,
+                    email: this.email,
+                    password: this.password.password,
+                };
+                console.log(data);
+                axios.post('http://localhost:3000/users/register', data)
+                .then((data) => {
+                    if( data.status == 200 ) {
+                        window.location.assign("http://localhost:8080/signin");
+                    }
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+            }
+            else {
+                console.log("Submit failed");
+            }
         }
-    },
+    }
 }
