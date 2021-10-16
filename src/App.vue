@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <!-- <div id="app">
 
-  </div>
+  </div> -->
   <router-view />
 </template>
 
@@ -13,6 +13,7 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 // body{

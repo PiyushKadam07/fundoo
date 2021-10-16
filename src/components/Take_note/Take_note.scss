@@ -1,0 +1,76 @@
+.open {
+    display: block;
+    // flex-direction: column;
+}
+
+.close {
+    display: none;
+}
+
+.take_note_container {
+    // padding: 50px;
+
+    .take_note {
+        // width: 75%;
+        border-radius: 10px;
+        display: flex;
+        border: 1px solid;
+        // align-items: center;
+        padding: 3px;
+        flex-direction: column;
+        
+        textarea, input {
+            border: 1px solid white;
+            outline: none;
+            padding: 10px;
+            height: 25px;
+        }
+
+        .takenote {
+            display: flex;
+            align-items: center;
+
+            #icons.close {
+                color: #5f6368;
+                display: flex;
+                justify-content: space-between;
+                width: 22%;
+
+                #check {
+                    border: 2px solid #5f6368;
+                }
+            }
+
+            #icons.open {
+                display: none;
+            }
+        }
+
+        #icons1.open {
+            color: #5f6368;
+            display: flex;
+            justify-content: space-between;
+            width: 99%;
+
+            .icons11 {
+                display: flex;
+                justify-content: space-between; 
+                width: 60%;
+            }
+
+            button{
+                background-color: #fff;
+                border: none;
+                cursor: pointer;
+                border-radius: 50%;
+                height: 32px;
+                width: 34px;
+                padding: 5px;
+            }
+        }
+
+        #icons1.close {
+            display: none;
+        }
+    }
+}

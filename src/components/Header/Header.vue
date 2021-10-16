@@ -2,7 +2,30 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <div class="header">
         <div class="header-container">
-            <div class="sidebar">
+            <div class="leftnav">
+                <div class="left-container">
+                    <span class="icon" @click="iconopen=!(iconopen)">☰</span>
+                    <span class="title">Fundoo</span>
+                </div>
+            </div>
+            <div class="centernav">
+                <i class="material-icons">&#xe8b6;</i>
+                <input type = "text" class="filter" placeholder="Search">
+            </div>
+            <div class="rightnav">
+                <div class="right-container1">
+                    <span class="material-icons">refresh</span>
+                    <span class="material-icons">settings</span>
+                    <span class="material-icons">dns</span>
+                </div>
+                <div class="right-container2">
+                    <span class="material-icons">apps</span>
+                    <span class="material-icons">account_circle</span>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-container">
                 <div role="button" class="icons-content">
                     <span class="material-icons">lightbulb</span>
                     <span :class="[iconopen ? 'open' : 'close']">Notes</span>
@@ -24,25 +47,11 @@
                     <span :class="[iconopen ? 'open' : 'close']">Bin</span>
                 </div>
             </div>
-            <div class="leftnav">
-                <div class="left-container">
-                    <span class="icon" @click="iconopen=!(iconopen)">☰</span>
-                    <span class="title">Fundoo</span>
+            <div class="content_container">
+                <div class="take_a_note">
+                    <Take_note />
                 </div>
-            </div>
-            <div class="centernav">
-                <i class="material-icons">&#xe8b6;</i>
-                <input type = "text" class="filter" placeholder="Search">
-            </div>
-            <div class="rightnav">
-                <div class="right-container1">
-                    <span class="material-icons">refresh</span>
-                    <span class="material-icons">settings</span>
-                    <span class="material-icons">dns</span>
-                </div>
-                <div class="right-container2">
-                    <span class="material-icons">apps</span>
-                    <span class="material-icons">account_circle</span>
+                <div class="display_notes">
                 </div>
             </div>
         </div>
