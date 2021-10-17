@@ -4,7 +4,7 @@ import Logocontent from '@/components/Logocontent/Logocontent.vue';
 import Footer from "@/components/Footer/Footer.vue";
 import useValidate from '@vuelidate/core';
 import { required, helpers, email } from '@vuelidate/validators';
-import axios from "axios";
+import { Service } from '../../service/Service';
 
 export default {
     name: 'SignIn',
@@ -41,20 +41,7 @@ export default {
                     password: this.password,
                 };
                 // console.log(data);
-                axios.post('http://localhost:3000/users/login', data)
-                .then((data) => {
-                    if( data.status == 200 ) {
-                        console.log(data.data.gettoken,data.data.detail._id);
-                        let tokens = {
-                            gettoken: data.data.gettoken,
-                            id: data.data.detail._id
-                        }
-                        localStorage.setItem('Login',JSON.stringify(tokens));
-                    }
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
+                Service.signin(data);
             }
             else {
                 console.log("Submit failed");

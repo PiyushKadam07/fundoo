@@ -1,6 +1,5 @@
 .open {
     display: block;
-    // flex-direction: column;
 }
 
 .close {
@@ -8,14 +7,10 @@
 }
 
 .take_note_container {
-    // padding: 50px;
-
     .take_note {
-        // width: 75%;
         border-radius: 10px;
         display: flex;
         border: 1px solid;
-        // align-items: center;
         padding: 3px;
         flex-direction: column;
         

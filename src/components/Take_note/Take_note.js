@@ -1,4 +1,5 @@
 export default {
+    name: "Take_note",
     data() {
         return {
             notes: false,

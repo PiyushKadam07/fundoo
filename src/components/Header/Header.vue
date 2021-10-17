@@ -52,6 +52,7 @@
                     <Take_note />
                 </div>
                 <div class="display_notes">
+                    <Display_notes />
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import Textbox from '@/components/Textbox/Textbox.vue';
 import Footer from '@/components/Footer/Footer.vue';
 import useValidate from '@vuelidate/core';
 import { required, helpers, sameAs } from '@vuelidate/validators';
-import axios from "axios";
+import { Service } from '../../service/Service';
 
 export default {
     name: 'Resetpassword',
@@ -46,13 +46,7 @@ export default {
                 console.log(data);
                 let logindetail = JSON.parse(localStorage.getItem('Login'));
                 console.log(logindetail);
-                axios.patch('http://localhost:3000/users/reset/'+logindetail.gettoken, data)
-                .then((res) => {
-                    console.log(res)
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
+                Service.resetpassword(data, logindetail);
             }
             else {
                 console.log("Submit failed");
