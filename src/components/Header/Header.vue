@@ -27,23 +27,23 @@
         <div class="sidebar">
             <div class="sidebar-container">
                 <div role="button" class="icons-content">
-                    <span class="material-icons">lightbulb</span>
+                    <span class="material-icons" @mouseover="iconopen = true" @mouseleave="iconopen = false">lightbulb</span>
                     <span :class="[iconopen ? 'open' : 'close']">Notes</span>
                 </div>
                 <div role="button" class="icons-content">
-                    <span class="material-icons">notifications</span>
+                    <span class="material-icons" @mouseover="iconopen = true" @mouseleave="iconopen = false">notifications</span>
                     <span :class="[iconopen ? 'open' : 'close']">Reminder</span>
                 </div>
                 <div role="button" class="icons-content">
-                    <span class="material-icons">edit</span>
+                    <span class="material-icons" @mouseover="iconopen = true" @mouseleave="iconopen = false">edit</span>
                     <span :class="[iconopen ? 'open' : 'close']">Edit labels</span>
                 </div>
                 <div role="button" class="icons-content">
-                    <span class="material-icons">archive</span>
+                    <span class="material-icons" @mouseover="iconopen = true" @mouseleave="iconopen = false">archive</span>
                     <span :class="[iconopen ? 'open' : 'close']">Archive</span>
                 </div>
                 <div role="button" class="icons-content">
-                    <span class="material-icons">delete</span>
+                    <span class="material-icons" @mouseover="iconopen = true" @mouseleave="iconopen = false">delete</span>
                     <span :class="[iconopen ? 'open' : 'close']">Bin</span>
                 </div>
             </div>

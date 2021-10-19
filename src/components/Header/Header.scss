@@ -17,14 +17,13 @@
     flex-direction: column;
 
     .header-container {
-        width: 95%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0 auto;
         background-color: #fff;
         height: 65px;
         border-bottom: 1px solid lightgray;
+        padding: 5px 0;
     
         .leftnav {
             display: flex;
@@ -34,6 +33,7 @@
             font-size: 22px;
             font-family: Product-sans;
             color: #5f6368;
+            margin-left: 15px;
                 
             .left-container {
                 display: flex;
@@ -79,6 +79,7 @@
             color: #5f6368;
             display: flex;
             justify-content: space-between;
+            margin-right: 25px;
 
             .right-container1, .right-container2 {
                 display: flex;
@@ -86,8 +87,11 @@
                 width: 60%;
             }
 
-            .right-container1 > span {
-                width: 50px;
+            .right-container1 { 
+                margin-right: 30px;
+                span {
+                    width: 50px;
+                }
             }    
         }
     }
@@ -109,10 +113,11 @@
                 grid-template-columns: 0.5fr 1fr;
                 display: grid;
                 align-items: center;
-                justify-items: center;
-
+        
                 .material-icons {
                     padding: 12px;
+                    display: flex;
+                    justify-content: center;
                 }
 
                 .material-icons:hover {
@@ -134,11 +139,9 @@
             width: 75%;
 
             .take_a_note {
-                // width: 75%;
-                height: 30vh;  //170px
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                margin: 3% 0;
             }
         }
     }
