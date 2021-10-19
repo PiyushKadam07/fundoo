@@ -255,6 +255,9 @@
             </div>
         </div>
     </div>
+    <div id="snackbar1">
+        <Snackbar :text="this.text" :check=this.check :show=this.show />
+    </div>
 </template>
     
 <script type="module" src="./SignUp.js"></script>

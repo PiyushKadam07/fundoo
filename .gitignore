@@ -8,7 +8,6 @@ Todos.scss
 Todos.vue
 todos.js
 src/components/Display_notes
-src/components/Snackbar
 
 # local env files
 .env.local

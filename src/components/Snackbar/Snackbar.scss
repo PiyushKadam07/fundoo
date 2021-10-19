@@ -1,0 +1,39 @@
+#snackbar {
+    height: 5vh;
+    width: 45vw;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+    bottom: 30px;
+
+    #snackbar-container {
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        p {
+            width: 40vw;
+        }
+
+        span {
+            width: 33vw;
+            display: flex;
+            justify-content: flex-end;
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+    #snackbar-container.close {
+        display: none;
+    }
+}
+
+.open {
+    display: block;
+}
+
+.close {
+    display: none;
+}

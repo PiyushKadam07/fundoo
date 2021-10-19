@@ -2,6 +2,7 @@ import "./SignIn.scss";
 import Textbox from '@/components/Textbox/Textbox.vue';
 import Logocontent from '@/components/Logocontent/Logocontent.vue';
 import Footer from "@/components/Footer/Footer.vue";
+import Snackbar from "@/components/Snackbar/Snackbar.vue";
 import useValidate from '@vuelidate/core';
 import { required, helpers, email } from '@vuelidate/validators';
 import { Service } from '../../service/Service';
@@ -12,6 +13,7 @@ export default {
         Textbox,
         Logocontent,
         Footer,
+        Snackbar,
     },
     data() {
         return {
@@ -35,15 +37,34 @@ export default {
         submit() {
             this.v$.$validate();
             // console.log(this.v$);
-            if (!this.v$.error) {
+            if (!this.v$.$error) {
                 let data = {
                     email: this.email,
                     password: this.password,
                 };
                 // console.log(data);
-                Service.signin(data);
+                this.text="Login successfull";
+                this.check=true;
+                this.show=true;
+                Service.postmethod('/users/login', data)
+                .then((data) => {
+                    if( data.status == 200 ) {
+                        console.log(data.data.gettoken,data.data.detail._id);
+                        let tokens = {
+                            gettoken: data.data.gettoken,
+                            id: data.data.detail._id
+                        }
+                        localStorage.setItem('Login',JSON.stringify(tokens));
+                    }
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
             }
             else {
+                this.text="Login failed";
+                this.check=false;
+                this.show=true;
                 console.log("Submit failed");
             }
         },

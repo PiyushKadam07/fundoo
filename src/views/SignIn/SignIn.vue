@@ -18,6 +18,8 @@
             <Footer text="Create account" />
         </form>
     </div>
+    <Snackbar :text="this.text" :check=this.check :show=this.show />
+    
 </template>
     
 <script type="module" src="./SignIn.js"></script>    

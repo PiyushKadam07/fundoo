@@ -10,6 +10,8 @@
             <Footer text="" />
         </form>
     </div>
+    <Snackbar :text="this.text" :check=this.check :show=this.show />
+    
 </template>
     
 <script type="module" src="./Resetpassword.js"></script>    

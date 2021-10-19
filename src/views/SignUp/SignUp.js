@@ -2,6 +2,7 @@ import "./SignUp.scss";
 import Textbox from '@/components/Textbox/Textbox.vue';
 import Logocontent from '@/components/Logocontent/Logocontent.vue';
 import Footer from '@/components/Footer/Footer.vue';
+import Snackbar from "@/components/Snackbar/Snackbar.vue";
 import useValidate from '@vuelidate/core';
 import { required, alpha, sameAs, helpers, email } from '@vuelidate/validators';
 import { Service } from '../../service/Service';
@@ -12,6 +13,7 @@ export default {
         Textbox,
         Logocontent,
         Footer,
+        Snackbar,
     },
     data() {
         return {
@@ -24,6 +26,9 @@ export default {
                 confirm: '',
             },
             showPassword: false,
+            show: false,
+            check: false,
+            text: '',
         }
     },
     validations() {
@@ -54,18 +59,32 @@ export default {
     methods: {
         submit() {
             this.v$.$validate();
-            // console.log(this.v$);
-            if (!this.v$.error) {
+            console.log(this.v$);
+            if (!this.v$.$error) {
                 let data = {
                     firstName: this.firstname,
                     lastName: this.lastname,
                     email: this.email,
                     password: this.password.password,
                 };
+                this.text="Registered successfully";
+                this.check=true;
+                this.show=true;
                 console.log(data);
-                Service.signup(data);
+                Service.postmethod('/users/register', data)
+                .then((data) => {
+                    if( data.status == 200 ) {
+                        window.location.assign("http://localhost:8080/signin");
+                    }
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
             }
             else {
+                this.text="Registration failed";
+                this.check=false;
+                this.show=true;
                 console.log("Submit failed");
             }
         }
