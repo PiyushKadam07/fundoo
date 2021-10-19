@@ -13,14 +13,7 @@
                 </div>
             </div>
             <div id="icons1" :class="[notes ? 'open' : 'close']">
-                <div class="icons11">
-                    <span class="material-icons">notifications_none</span>
-                    <span class="material-icons">person_add_alt_1</span>
-                    <span class="material-icons">palette</span>
-                    <span class="material-icons">image</span>
-                    <span class="material-icons">archive</span>
-                    <span class="material-icons">more_vert</span>
-                </div>
+                <Take_note_icon />
                 <div>
                     <button class="close-button" @click="newNoteSwitch()">Close</button>
                 </div>
