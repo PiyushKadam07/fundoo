@@ -5,7 +5,7 @@
             <input type="text" placeholder="Title" id="take_a_note" :class="[notes ? 'open' : 'close']">
             <div class="takenote">
                 <!-- <input type="text" placeholder="Take a note..." id="take_a_note"> -->
-                <textarea rows="1" cols="50" id="take_a_note" placeholder="Take a note..." @click="newNoteSwitch"></textarea>
+                <textarea rows="1" cols="50" id="take_a_note" placeholder="Take a note..." @click="notes=true" @mouseleave="notes=false"></textarea>
                 <div id="icons" :class="[notes ? 'open' : 'close']">
                     <span class="material-icons" id="check">check</span>
                     <span class="material-icons">brush</span>

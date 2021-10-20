@@ -51,9 +51,9 @@
                 <div class="take_a_note">
                     <Take_note />
                 </div>
-                <div class="display_notes">
+                <!-- <div class="display_notes"> -->
                     <Display_notes />
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>

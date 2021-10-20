@@ -1,0 +1,19 @@
+.display_notes {
+    display: grid;
+    grid-template-columns: repeat(3, 0.1fr);
+    grid-gap: 15px;
+
+    .display_notes_container {
+        border: 1px solid;
+        // height: 210px;
+        // width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+
+        .icons {
+            display: flex;
+            align-items: flex-end;
+            // height: 22vh;
+        }
+    }
+}
