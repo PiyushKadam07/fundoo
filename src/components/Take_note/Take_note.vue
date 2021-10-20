@@ -2,10 +2,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <div class="take_note_container">
         <div class="take_note">
-            <input type="text" placeholder="Title" id="take_a_note" :class="[notes ? 'open' : 'close']">
+            <div :class="[notes ? 'open' : 'close']">
+                <input type="text" placeholder="Title" v-model="data.title" id="take_a_note">
+            </div>
             <div class="takenote">
                 <!-- <input type="text" placeholder="Take a note..." id="take_a_note"> -->
-                <textarea rows="1" cols="50" id="take_a_note" placeholder="Take a note..." @click="notes=true" @mouseleave="notes=false"></textarea>
+                <textarea rows="1" cols="50" id="take_a_note" placeholder="Take a note..." v-model="data.description" @click="notes=true"></textarea>
                 <div id="icons" :class="[notes ? 'open' : 'close']">
                     <span class="material-icons" id="check">check</span>
                     <span class="material-icons">brush</span>
@@ -15,7 +17,7 @@
             <div id="icons1" :class="[notes ? 'open' : 'close']">
                 <Take_note_icon />
                 <div>
-                    <button class="close-button" @click="newNoteSwitch()">Close</button>
+                    <button class="close-button" type="button" @click="newNoteSwitch()">Close</button>
                 </div>
             </div>
         </div>

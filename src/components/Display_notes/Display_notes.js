@@ -10,7 +10,7 @@ export default {
         return {
             notes: {}
         }
-    },
+    },  
     mounted() {
         Service.getmethod('/notes/allnotes')
         .then((data) => {

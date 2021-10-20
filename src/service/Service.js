@@ -24,4 +24,9 @@ export class Service {
         // console.log(url, headerconfig)
         return await axios.get(url, headerconfig)
     }
+
+    //create new note
+    static async postnotemethod(url, data) {
+        return await axios.post(url, data, headerconfig)
+    }
 }
