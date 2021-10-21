@@ -6,7 +6,6 @@
                 <input type="text" placeholder="Title" v-model="data.title" id="take_a_note">
             </div>
             <div class="takenote">
-                <!-- <input type="text" placeholder="Take a note..." id="take_a_note"> -->
                 <textarea rows="1" cols="50" id="take_a_note" placeholder="Take a note..." v-model="data.description" @click="notes=true"></textarea>
                 <div id="icons" :class="[notes ? 'open' : 'close']">
                     <span class="material-icons" id="check">check</span>
@@ -15,7 +14,7 @@
                 </div>
             </div>
             <div id="icons1" :class="[notes ? 'open' : 'close']">
-                <Take_note_icon />
+                <Take_note_icon :notedata="data" />
                 <div>
                     <button class="close-button" type="button" @click="newNoteSwitch()">Close</button>
                 </div>

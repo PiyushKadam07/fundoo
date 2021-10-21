@@ -5,7 +5,7 @@
             <div class="leftnav">
                 <div class="left-container">
                     <span class="icon" @click="iconopen=!(iconopen)">☰</span>
-                    <span class="title">Fundoo</span>
+                    <span class="title"> {{ title }} </span>
                 </div>
             </div>
             <div class="centernav">
@@ -38,11 +38,11 @@
                     <span class="material-icons" @mouseover="iconopen = true" @mouseleave="iconopen = false">edit</span>
                     <span :class="[iconopen ? 'open' : 'close']">Edit labels</span>
                 </div>
-                <div role="button" class="icons-content">
+                <div role="button" class="icons-content" @click="archived">
                     <span class="material-icons" @mouseover="iconopen = true" @mouseleave="iconopen = false">archive</span>
                     <span :class="[iconopen ? 'open' : 'close']">Archive</span>
                 </div>
-                <div role="button" class="icons-content">
+                <div role="button" class="icons-content" @click="deleted">
                     <span class="material-icons" @mouseover="iconopen = true" @mouseleave="iconopen = false">delete</span>
                     <span :class="[iconopen ? 'open' : 'close']">Bin</span>
                 </div>
@@ -51,9 +51,7 @@
                 <div class="take_a_note">
                     <Take_note />
                 </div>
-                <!-- <div class="display_notes"> -->
-                    <Display_notes />
-                <!-- </div> -->
+                <Display_notes :url="url"/>    
             </div>
         </div>
     </div>

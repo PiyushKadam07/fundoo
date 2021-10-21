@@ -45,6 +45,22 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Notes/Notes.vue')
   },
+  {
+    path: '/notes/archive',
+    name: 'Archive',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Archive/Archive.vue')
+  },
+  {
+    path: '/notes/bin',
+    name: 'Bin',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Bin/Bin.vue')
+  },
 ]
 
 const router = createRouter({

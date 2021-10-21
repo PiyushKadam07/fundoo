@@ -6,15 +6,21 @@ export default {
     components: {
         Take_note_icon,
     },
+    props: {
+        url: {
+            type: String,
+        },
+    },
     data() {
         return {
             notes: {}
         }
     },  
     mounted() {
-        Service.getmethod('/notes/allnotes')
+        Service.getmethod(this.url)
         .then((data) => {
             this.notes = data.data;
+            this.notes = this.notes.reverse();
             // console.log(data);    
         })
         .catch((err) => {

@@ -12,7 +12,7 @@
 
 .header {
     height: 100%;
-    padding: 15px 0;
+    // padding: 15px 0;
     display: flex;
     flex-direction: column;
 
@@ -49,14 +49,15 @@
         
         .centernav {
             border-radius: 10px;
-            background-color: #fff;
+            background-color: #f1f3f4;
             width: 45%;
             padding: 5px 25px;
             height: 35px;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            border: 1px solid;
+            /* border: 1px solid; */
+            border: 1px solid #e0e0e0;
 
             .material-icons {
                 color: #5f6368;
@@ -71,6 +72,7 @@
                 border: none;
                 outline: none;
                 margin-right: 80px;
+                background-color: transparent;
             }
         }
 

@@ -12,7 +12,7 @@ export default {
             data: {
                 title: '',
                 description: '',
-                color: '#000000',
+                color: '#ffffff',
             }
         };
     },

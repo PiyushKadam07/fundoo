@@ -1,6 +1,6 @@
 <template>
     <div class="notes">
-        <Header />
+        <Header title="Fundoo" url="/notes/allnotes" />
     </div>
 </template>
 

@@ -4,7 +4,7 @@
         <span class="material-icons">person_add_alt_1</span>
         <span class="material-icons">palette</span>
         <span class="material-icons">image</span>
-        <span class="material-icons">archive</span>
+        <span class="material-icons" @click="archived()">archive</span>
         <span class="material-icons">more_vert</span>
     </div>
 </template>
