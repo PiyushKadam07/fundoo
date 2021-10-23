@@ -30,9 +30,9 @@ export class Service {
         return await axios.post(url, data, headerconfig)
     }
 
-    //archive a note, deleta a note
-    static async patchnotemethod(url) {
-        // console.log(url)
-        return await axios.patch(url, {}, headerconfig)
+    //archive a note, deleta a note, change note background color
+    static async patchnotemethod(url, data) {
+        // console.log(url, data)
+        return await axios.patch(url, data, headerconfig)
     }
 }
