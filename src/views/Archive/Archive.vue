@@ -1,6 +1,6 @@
 <template>
     <div class="archive">
-        <Header title="Archive" url="/notes/allarchivednotes" />
+        <Header title="Archive" url="/notes/allarchivednotes" page="archive" />
     </div>
 </template>
 

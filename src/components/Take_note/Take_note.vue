@@ -1,7 +1,7 @@
 <template>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <div class="take_note_container">
-        <div class="take_note">
+        <div class="take_note" v-if="!$route.fullPath.startsWith('/notes/')">
             <div :class="[notes ? 'open' : 'close']">
                 <input type="text" placeholder="Title" v-model="data.title" id="take_a_note">
             </div>
@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div id="icons1" :class="[notes ? 'open' : 'close']">
-                <Take_note_icon :notedata="data" />
+                <Take_note_icon :notedata="data" :iconopen="iconopen" />
                 <div>
                     <button class="close-button" type="button" @click="newNoteSwitch()">Close</button>
                 </div>

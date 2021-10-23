@@ -6,19 +6,22 @@ export default {
         notedata: {
             type: Object,
         },
-        id: {
+        _id: {
             type: String,
+        },
+        iconopen: {
+            type: Boolean,
         },
     },
     data() {
         return {
-            data: this.notedata
+            data: this.notedata,
         }
     },
     methods: {
         archived() {
-            // console.log('inside archived icon', this.data, this.id);
-            Service.patchnotemethod('/notes/archive/' + this.id)
+            // console.log('inside archived icon', this.data, this._id);
+            Service.patchnotemethod('/notes/archive/' + this._id)
             .then((data) => {
                 console.log(data);    
                 location.reload();
@@ -26,6 +29,17 @@ export default {
             .catch((err) => {
                 console.log(err)
             }) 
-        }
+        },
+        deleted() {
+            // console.log('inside archived icon', this.data, this._id);
+            Service.patchnotemethod('/notes/delete/' + this._id)
+            .then((data) => {
+                console.log(data);    
+                location.reload();
+            })
+            .catch((err) => {
+                console.log(err)
+            }) 
+        },
     }
 }

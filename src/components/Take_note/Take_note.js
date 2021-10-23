@@ -8,6 +8,7 @@ export default {
     },
     data() {
         return {
+            iconopen: true,
             notes: false,
             data: {
                 title: '',
@@ -19,15 +20,20 @@ export default {
     methods: {
         newNoteSwitch(){
             this.notes = !this.notes
-            console.log(this.data)
-            Service.postnotemethod('/notes', this.data)
-            .then((data) => {
-                console.log(data);    
-                location.reload();
-            })
-            .catch((err) => {
-                console.log(err)
-            }) 
+            console.log(this.data, this.data.title)
+            if( this.data.title != '' && this.data.description != '' ) {
+                Service.postnotemethod('/notes', this.data)
+                .then((data) => {
+                    console.log(data);    
+                    location.reload();
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+            }
+            else {
+                console.log("Cannot add empty note");
+            } 
         }
     },
 }

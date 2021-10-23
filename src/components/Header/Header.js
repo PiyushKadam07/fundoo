@@ -14,6 +14,9 @@ export default {
         url: {
             type: String,
         },
+        page: {
+            type: String,
+        },
     },
     data() {
         return {
@@ -21,6 +24,10 @@ export default {
         };
     },
     methods: {
+        notes() {
+            console.log('inside notes');
+            window.location.assign('http://localhost:8080/notes');
+        },
         archived() {
             console.log('inside archived');
             window.location.assign('http://localhost:8080/notes/archive');

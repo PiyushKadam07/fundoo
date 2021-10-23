@@ -13,7 +13,8 @@ export default {
     },
     data() {
         return {
-            notes: {}
+            notes: {},
+            iconopen: false,
         }
     },  
     mounted() {

@@ -1,6 +1,10 @@
-.icons11 {
+#icons11.open {
     display: flex;
     justify-content: space-between; 
     width: 215px;
     color: #5f6368;
+}
+
+#icons11.close {
+    display: none;
 }

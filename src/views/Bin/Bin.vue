@@ -1,6 +1,6 @@
 <template>
     <div class="bin">
-        <Header title="Bin" url="/notes/alldeletednotes" />
+        <Header title="Bin" url="/notes/alldeletednotes" page="bin" />
     </div>
 </template>
 
