@@ -17,9 +17,21 @@ export default {
     data() {
         return {
             notes: this.noteData,
+            editnote: false,
             iconopen: false,
+            note: {
+                title: "",
+                description: "",
+                color: "",
+                id: "",
+              },
         }
     },  
+    watch: { 
+        data: function(newVal) { 
+        this.note = newVal
+        }
+    },
     mounted() {
         Service.getmethod(this.url)
         .then((data) => {
@@ -32,8 +44,36 @@ export default {
         })
     },
     methods: {
-        updateNote(key) {
-            console.log('inside update note', key, this.noteData, this.notes._id, this._id, this.notes)
+        getnote(key) {
+            // console.log('inside get note', key);
+            Service.getmethod('/notes/note/' + key)
+            .then((data) => {
+                // console.log(data);   
+                this.note.title = data.data.title;
+                this.note.description = data.data.description;
+                this.note.color = data.data.color;
+                this.note.id = data.data._id; 
+                this.editnote = true;
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        },
+        updatenote(key) {
+            let data1 = {
+                "title" : this.note.title,
+                "description" : this.note.description,
+                "color" : this.note.color,
+            };
+            // console.log(key, data1)
+            Service.patchnotemethod('/notes/update/' + key, data1)
+            .then( 
+                location.reload(),
+                this.editnote = false
+            )
+            .catch((err) => {
+                console.log(err)
+            })
         }
     },
 }

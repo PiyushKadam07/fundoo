@@ -19,7 +19,7 @@ export class Service {
         return await axios.patch(url+logindetail.gettoken, data)
     }
 
-    // display all notes, archive & bin notes
+    // display all notes, archive & bin notes, get specific id note
     static async getmethod(url) {
         // console.log(url, headerconfig)
         return await axios.get(url, headerconfig)
@@ -30,7 +30,7 @@ export class Service {
         return await axios.post(url, data, headerconfig)
     }
 
-    //archive a note, deleta a note, change note background color
+    //archive a note, deleta a note, change note background color, update note method
     static async patchnotemethod(url, data) {
         // console.log(url, data)
         return await axios.patch(url, data, headerconfig)
