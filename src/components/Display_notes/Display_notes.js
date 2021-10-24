@@ -10,10 +10,13 @@ export default {
         url: {
             type: String,
         },
+        noteData: {
+            type: String,
+        },
     },
     data() {
         return {
-            notes: {},
+            notes: this.noteData,
             iconopen: false,
         }
     },  
@@ -27,5 +30,10 @@ export default {
         .catch((err) => {
             console.log(err)
         })
+    },
+    methods: {
+        updateNote(key) {
+            console.log('inside update note', key, this.noteData, this.notes._id, this._id, this.notes)
+        }
     },
 }

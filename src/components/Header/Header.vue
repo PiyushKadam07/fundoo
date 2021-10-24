@@ -22,8 +22,7 @@
                     <span class="material-icons">dns</span>
                 </div>
                 <div class="right-container2">
-                    <span class="material-icons">apps</span>
-                    <span class="material-icons">account_circle</span>
+                    <Account />
                 </div>
             </div>
         </div>

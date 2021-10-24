@@ -40,8 +40,7 @@ export default {
             // console.log('inside archived icon', this.data, this._id);
             Service.patchnotemethod('/notes/delete/' + this._id)
             .then((data) => {
-                console.log(data);    
-                // location.reload();
+                console.log(data);   
             })
             .catch((err) => {
                 console.log(err);

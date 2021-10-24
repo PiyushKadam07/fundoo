@@ -74,7 +74,7 @@ export default {
                 Service.postmethod('/users/register', data)
                 .then((data) => {
                     if( data.status == 200 ) {
-                        window.location.assign("http://localhost:8080/signin");
+                        this.$router.push("/signin");
                     }
                 })
                 .catch((err) => {

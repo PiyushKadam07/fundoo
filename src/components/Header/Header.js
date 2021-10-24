@@ -1,11 +1,12 @@
 import Take_note from "../Take_note/Take_note.vue";
 import Display_notes from "../Display_notes/Display_notes.vue";
-// import { Service } from '../../service/Service';
+import Account from "../Account/Account.vue";
 
 export default {    
     components: {
         Take_note,
         Display_notes,
+        Account,
     },
     props: {
         title: {
@@ -26,15 +27,15 @@ export default {
     methods: {
         notes() {
             console.log('inside notes');
-            window.location.assign('http://localhost:8080/notes');
+            this.$router.push("/notes");
         },
         archived() {
             console.log('inside archived');
-            window.location.assign('http://localhost:8080/notes/archive');
+            this.$router.push("/notes/archive");
         },
         deleted() {
             console.log('inside deleted');
-            window.location.assign('http://localhost:8080/notes/bin');
+            this.$router.push("/notes/bin");
         }
     }
 }

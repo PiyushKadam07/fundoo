@@ -55,6 +55,7 @@ export default {
                             id: data.data.detail._id
                         }
                         localStorage.setItem('Login',JSON.stringify(tokens));
+                        this.$router.push("/notes");
                     }
                 })
                 .catch((err) => {
