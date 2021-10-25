@@ -1,8 +1,11 @@
 import axios from "axios";
 
+var headerconfig;
 let token = JSON.parse(localStorage.getItem('Login'));
-// console.log(token, token.gettoken)
-const headerconfig = { headers: { 'authorization': 'Bearer ' + token.gettoken }};
+if (token != null) {
+    // console.log(token, token.gettoken)
+    headerconfig = { headers: { 'authorization': 'Bearer ' + token.gettoken }};
+}
 
 export class Service {
     constructor() {

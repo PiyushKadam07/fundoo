@@ -1,6 +1,6 @@
 .display_notes {
     display: grid;
-    grid-template-columns: repeat(3, 0.1fr);
+    grid-template-columns: repeat(4, 0.1fr);
     grid-gap: 25px;
 
     .display_notes_container {
@@ -57,7 +57,7 @@
     top: 22%;
     z-index: 5000;
 
-    input{
+    input {
         height: 44px;
         padding: 0;
         border: none;
@@ -103,3 +103,39 @@
     }
 }
 
+@media screen and ( max-width: 1024px ) {
+    .display_notes {
+        grid-template-columns: auto auto auto;
+        
+        .display_notes_container {
+            width: 190px;
+        }
+    }
+}
+
+@media screen and ( max-width: 768px ) {
+    .display_notes {
+        grid-template-columns: auto auto;
+        grid-gap: 10px;
+        font-size: 13px;
+
+        .display_notes_container {
+            width: 170px;
+        }
+    }
+
+    .update_note_container {
+        width: 70%;
+    }
+}
+
+@media screen and ( max-width: 400px ) {
+    .display_notes {
+        grid-template-columns: auto;
+        font-size: 12px;
+    }
+
+    .update_note_container {
+        width: 65%;
+    }
+}

@@ -3,6 +3,20 @@
     justify-content: space-between; 
     width: 215px;
     color: #5f6368;
+
+    @media screen and (max-width: 768px) {
+        .material-icons {
+            font-size: 20px;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 120%;
+
+        .material-icons {
+            font-size: 16px;
+        }
+    }
 }
 
 #icons11.close {

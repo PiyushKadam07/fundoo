@@ -14,12 +14,12 @@
         flex-direction: column;
         border: 1px solid #fff;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 470px;
         
         textarea, input {
             border: 1px solid white;
             outline: none;
             padding: 10px;
-            // height: 25px;
             letter-spacing: .01428571em;
             font-family: Roboto,Arial,sans-serif;
             font-size: .875rem;
@@ -52,6 +52,7 @@
             display: flex;
             justify-content: space-between;
             width: 99%;
+            align-items: center;
 
             button{
                 background-color: #fff;
@@ -72,6 +73,58 @@
 
         #icons1.close {
             display: none;
+        }
+    }
+}
+
+@media screen and ( max-width: 768px ) {
+    .take_note_container {
+        .take_note {
+            width: 320px;
+
+            textarea, input {
+                font-size: 0.7rem;
+                line-height: 0.9rem;
+            }
+
+            .takenote {
+                .material-icons {
+                    font-size: 19px;
+                }
+            }
+
+            #icons1.open {
+                button {
+                    font-size: 0.7rem;
+                    line-height: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and ( max-width: 400px ) {
+    .take_note_container {
+        .take_note {
+            width: 200px;
+
+            textarea, input {
+                font-size: 0.6rem;
+                line-height: 0.8rem;
+            }
+
+            .takenote {
+                .material-icons {
+                    font-size: 16px;
+                }
+            }
+
+            #icons1.open {
+                button {
+                    font-size: 0.6rem;
+                    line-height: 0.8rem;
+                }
+            }
         }
     }
 }

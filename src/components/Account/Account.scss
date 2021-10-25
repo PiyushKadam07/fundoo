@@ -1,7 +1,6 @@
 .account-buttons {
     display: flex;
     margin-left: -20px;
-    margin-top: -5px;
 
     button {
         background-color: #fff;
@@ -17,6 +16,12 @@
     button:hover {
         background-color: rgba(197, 197, 197, 0.4);
         transition: 0.2s ease-in-out;
+    }
+
+    @media screen and (max-width: 768px) {
+        svg {
+            height: 24px;
+        }
     }
 }
 
@@ -51,7 +56,8 @@
                 object-fit: cover;
             }
         }
-        .account-details{
+
+        .account-details {
             padding-top: 15px;
             text-align: center;
             font-family: 'Roboto', sans-serif;
@@ -64,10 +70,15 @@
                 margin: 0;
                 padding: 1px;
             }
+
             .email {
                 color: #555;
                 font-size: 14px;
                 font-weight: 400;
+            }
+
+            @media screen and (max-width: 768px) {
+                padding: 0;
             }
         }
     }
@@ -87,9 +98,18 @@
             text-align: center;
             padding: 10px 20px;
         }
+
         button:hover {
             background-color: #e7e7e7;
             transition: 0.2s ease-in-out;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 200px;
+
+        .profile, .sign-out-div {
+            padding: 10px 0;
         }
     }
 }

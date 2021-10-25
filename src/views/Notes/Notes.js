@@ -6,4 +6,10 @@ export default {
     components: {
         Header,
     },
+    beforeMount() {
+        let token = JSON.parse(localStorage.getItem('Login'));
+        if (token == null) {
+            this.$router.push("/signin");
+        }
+    }
 }

@@ -15,7 +15,7 @@
             <div class="above-footer"> Not your computer? Use Guest mode to sign in privately.
                 <a href="#">Learn more</a> 
             </div>
-            <Footer text="Create account" />
+            <Footer text="Create account" url="http://localhost:8080/signup" />
         </form>
     </div>
     <Snackbar :text="this.text" :check=this.check :show=this.show />

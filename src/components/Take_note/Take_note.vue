@@ -14,7 +14,9 @@
                 </div>
             </div>
             <div id="icons1" :class="[notes ? 'open' : 'close']">
-                <Take_note_icon :notedata="data" :iconopen="iconopen" />
+                <div>
+                    <Take_note_icon :notedata="data" :iconopen="iconopen" />
+                </div>
                 <div>
                     <button class="close-button" type="button" @click="newNoteSwitch()">Close</button>
                 </div>
